@@ -1,0 +1,206 @@
+:root{
+    --red: #F26419;
+    --orange: #F6AE2D;
+    --dark-blue: #3261B9 ;
+    --light-blue: #86BBD8;
+    --dark: #2F4858;
+    --green: #3FDAA0;
+    --white :#FFFFFF;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container{
+	position: relative;
+	width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 30px;
+	margin-top: 3%;
+    
+}
+
+.container .card{
+	width:308px;
+	position: relative;
+	height: 550px;
+	background: #f0f0f0;
+	margin:30px 10px;
+	display:flex;
+	flex-direction: column;
+	box-shadow: 0.5px 10px #e6e6e6;
+	transition:0.3s ease-in-out;
+	margin-top: 5%;
+
+}
+.container .card .imgBx{
+	position: relative;
+	width:260px;
+	height: 260px;
+	top: -60px;
+	left:20px;
+	box-shadow: 0 5px 20px rbga (0,0,0,1.2);
+
+}
+
+.container .card .imgBx img
+{
+	max-width: 100%;
+	border-radius: 10px;
+}
+
+.imgBx:hover img{
+	transform: scale(1.1);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* align container */
+.container__center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.round-logo {
+    max-width: 120px; /* Adjust the size of the logo as needed */
+    vertical-align: middle;
+    border-radius: 30%; /* Creates a round shape */
+}
+
+.logo-title {
+    display: inline-block;
+    margin-left: 10px; /* Adjust the spacing between the logo and title */
+    font-size: 36px; /* Adjust the font size as needed */
+    margin-top: 30px;
+}
+
+.center__row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.align__left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+h1{
+    font-weight: 300;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: var(--dark);
+}
+
+p{
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 22px;
+    margin: 2rem 0;
+    color: var(--dark);
+}
+
+a{text-decoration: none;}
+
+ul li{list-style: none;}
+
+/* LANDING AREA =============*/
+#landing__area{
+    width: 100%;
+    height: 70vh;
+    background: url(imgs/bg.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#landing__area nav{
+    height: 10%;
+    width: 80%;
+}
+nav .logo{
+    color: var(--green);
+}
+
+nav a{
+    color: var(--light-blue);
+    margin: 0 20px;
+    padding: 5px;
+}
+nav a:hover{color: var(--orange);}
+
+.landing__content {
+    height: 90%;
+    width: 80%;
+}
+
+.landing__content .landing__info{
+    width: 60%;
+    height: 100%;
+}
+
+.landing__info h1{color: var(--light-blue);}
+.landing__info p{
+    color: var(--light-blue);
+    width: 60%;
+}
+
+.landing__info button{
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.landing__info button:active{
+    transform: translateY(2px);
+} 
+
+.landing__info a{
+    color: var(--white);
+    background-color: var(--dark-blue);
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+table {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.header{
+    font-size: larger;
+    font: 20px Arial, sans-serif;
+}
+/* FOOTER */
+footer{
+    background-color: var(--dark-blue);
+}
+
+.footer__cont{
+    width: 60%;
+    margin: auto;
+}
+
+.footer__cont p{
+    color: var(--white);
+}
+
+.footer__cont .fab{
+    color: var(--light-blue);
+    font-size: 20px;
+    margin: 0 10px;
+}

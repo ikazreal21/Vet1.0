@@ -1,0 +1,400 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* align container */
+.container__center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.round-logo {
+    max-width: 120px; /* Adjust the size of the logo as needed */
+    vertical-align: middle;
+    border-radius: 30%; /* Creates a round shape */
+}
+
+.logo-title {
+    display: inline-block;
+    margin-left: 10px; /* Adjust the spacing between the logo and title */
+    font-size: 36px; /* Adjust the font size as needed */
+    margin-top: 70px;
+}
+
+.center__row {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.align__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: #2F4858;
+}
+
+p {
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 22px;
+    margin: 2rem 0;
+    color: #2F4858;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+/* LANDING AREA =============*/
+#landing__area {
+    width: 100%;
+    height: 70vh;
+    background-color: white;
+    background-position: center;
+    background-size: cover;
+}
+
+#landing__area nav {
+    height: 10%;
+    width: 80%;
+}
+
+nav .logo {
+    color: #3FDAA0;
+}
+
+nav a {
+    color: #86BBD8;
+    margin: 0 20px;
+}
+
+nav a:hover {
+    color: #F6AE2D;
+}
+
+.landing__content {
+    height: 90%;
+    width: 80%;
+}
+
+.landing__content .landing__info {
+    width: 60%;
+    height: 100%;
+}
+
+.landing__info h1 {
+    color: #86BBD8;
+}
+
+.landing__info p {
+    color: #86BBD8;
+    width: 60%;
+}
+
+.landing__info button {
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.landing__info button:active {
+    transform: translateY(2px);
+}
+
+.landing__info a {
+    color: #FFFFFF;
+    background-color: #3261B9;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.image__pet {
+    width: 40%;
+    height: 100%;
+    background: url(petbg1.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 30%;
+}
+
+/* HELP SECTION =========*/
+#help {
+    max-width: 90%;
+    margin: 3rem auto;
+    background-color: lightblue;
+    border-radius: 10px;
+}
+
+.help__cards--container {
+    padding: 2rem;
+}
+
+#help .help__card {
+    position: relative;
+    margin: 0 5%;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+    padding: 60px 10px;
+}
+
+.help__card:first-of-type {
+    background-color: #3261B9;
+}
+
+.help__card:nth-of-type(2) {
+    background-color: #3FDAA0;
+}
+
+.help__card:nth-of-type(3) {
+    background-color: #F26419;
+}
+
+.help__card h3,
+.help__card p {
+    color: white;
+}
+
+.help__card span {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    background: white;
+    padding: 5px;
+    color: #F26419;
+}
+
+.help__card:first-of-type span {
+    color: #F26419;
+}
+
+.help__card:nth-of-type(2) span {
+    color: #F6AE2D;
+}
+
+.help__card:nth-of-type(3) span {
+    color: #86BBD8;
+}
+
+.help__card .card__link {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 99;
+    opacity: 0;
+}
+
+.help__card:hover .card__link {
+    animation: showLink;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes showLink {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+
+    100% {
+        opacity: 1;
+        height: 100%;
+    }
+}
+
+.card__link a {
+    background-color: #3261B9;
+    color: #F6AE2D;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+/* GALLERY =============*/
+#gallery {
+    width: 100%;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 33%);
+    margin: 2rem 0;
+}
+
+.img__gallery {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+#img-1 {
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+
+#img-2 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+#img-3 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+#img-4 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+#img-5 {
+    grid-column: 3/4;
+    grid-row: 2/4;
+}
+
+#img-6 {
+    grid-column: 4/6;
+    grid-row: 3/4;
+}
+
+#img-7 {
+    grid-column: 4/5;
+    grid-row: 2/3;
+}
+
+#img-8 {
+    grid-column: 4/6;
+    grid-row: 1/2;
+}
+
+#img-9 {
+    grid-column: 5/6;
+    grid-row: 2/3;
+}
+
+/* CONTACT FORM */
+form {
+    width: 60vw;
+    max-width: 800px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+form .form__row {
+    width: 100%;
+    position: relative;
+}
+
+.form__row input {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-bottom: solid 1px #86BBD8;
+    outline: none;
+}
+
+/* hide arrows form input number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.form__row label {
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    color: #F26419;
+    font-size: 14px;
+    transition: 0.5s;
+}
+
+input:focus ~ label {
+    top: -5px;
+    font-size: 10px;
+    color: #3261B9;
+}
+
+textarea {
+    width: 100%;
+    height: 30px;
+    margin-top: 1rem;
+    border: none;
+    border-bottom: 1px solid #86BBD8;
+    outline: none;
+    appearance: none;
+    resize: none;
+}
+
+textarea::placeholder {
+    color: #3261B9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form button {
+    background-color: #3261B9;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: #86BBD8;
+    cursor: pointer;
+    width: 60%;
+    margin: 5px;
+}
+
+form button:active {
+    transform: scale(0.99);
+}
+
+/* FOOTER */
+footer {
+    background-color: #3261B9;
+}
+
+.footer__cont {
+    width: 60%;
+    margin: auto;
+}
+
+.footer__cont p {
+    color: #FFFFFF;
+}
+
+.footer__cont .fab {
+    color: #86BBD8;
+    font-size: 20px;
+    margin: 0 10px;
+}

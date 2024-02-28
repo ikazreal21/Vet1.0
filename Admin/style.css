@@ -1,0 +1,66 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.sidebar {
+    height: 100%;
+    width: 250px;
+    background: #234E70;
+    text-align: left;
+    position: fixed;
+
+}
+
+.sidebar h2 {
+    color: white ;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    font-style: italic;
+    font-size: xx-large;
+    position: relative;
+    bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 10px;
+    
+}
+
+.sidebar ul li {
+    padding: 10px ;
+    text-align: left;
+    border-bottom: 2px solid; 
+    color:whit;
+    background-color: #8AAAE5;
+    position: relative;
+    bottom: 40px;
+    font-family: 'Times New Roman', serif;
+}
+
+.sidebar ul li a {
+    color: whitesmoke;
+    text-decoration:none;
+    font-size: 1.2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    font-style: normal;
+    
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+.sidebar ul li:hover{
+    background-color: rgb(41, 89, 160);
+}
+.logo {
+    align-items: center;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    max-width: 50px; /* Adjust the size of your logo */
+}
+
+
