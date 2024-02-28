@@ -1,4 +1,6 @@
 {
     "name": "vet/vet",
-    "require": {}
+    "require": {
+        "infobip/infobip-api-php-client": "^5.1"
+    }
 }
