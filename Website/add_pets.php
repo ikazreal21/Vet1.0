@@ -7,6 +7,18 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 }
 
 include("db_connection.php");
+require_once '../vendor/autoload.php';
+
+use Cloudinary\Configuration\Configuration;
+use Cloudinary\Api\Upload\UploadApi;
+
+Configuration::instance([
+    'cloud' => [
+      'cloud_name' => 'dmagk9gck', 
+      'api_key' => '964986345641993', 
+      'api_secret' => 'sDSJ1IXtdVjMrMAkGxABuvS2wmo'],
+    'url' => [
+      'secure' => true]]);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $petName = $_POST['pet_name'];
@@ -32,6 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $filesize = $_FILES['pet_picture']['size'];
 
         // Verify file extension
+
+        // echo var_dump($picture);
         $ext = pathinfo($filename, PATHINFO_EXTENSION);
         if (!array_key_exists($ext, $allowed)) die("Error: Please select a valid file format.");
 
@@ -42,13 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verify MYME type of the file
         if (in_array($filetype, $allowed)) {
             // Check whether file exists before uploading it
-            if (file_exists("upload/" . $filename)) {
-                echo $filename . " is already exists.";
-            } else {
-                move_uploaded_file($_FILES["pet_picture"]["tmp_name"], "upload/" . $filename);
-                echo "Your file was uploaded successfully.";
-                $petPicture = "upload/" . $filename;
-            } 
+            $picture = (new UploadApi())->upload($_FILES["pet_picture"]["tmp_name"]);
         } else {
             echo "Error: There was a problem uploading your file. Please try again."; 
         }
@@ -56,11 +64,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Prepare an insert statement
     $stmt = $conn->prepare("INSERT INTO pets (pet_name, user_id, pet_type, pet_gender, pet_bday, pet_color, pet_history, pet_breed, neutered, pet_picture) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sissssssss", $petName, $userID, $petType, $petGender, $petBday, $petColor, $petHistory, $petBreed, $petNeutered, $petPicture);
+    $stmt->bind_param("sissssssss", $petName, $userID, $petType, $petGender, $petBday, $petColor, $petHistory, $petBreed, $petNeutered, $picture['secure_url']);
 
 
     if ($stmt->execute()) {
-        header("Location: dashboard.php");
+        // header("Location: dashboard.php");
     } else {
         echo "Error: " . $stmt->error;
     }

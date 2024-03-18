@@ -72,7 +72,7 @@ $result = $stmt->get_result();
         // Display image if available
         if (!empty($pet['pet_picture'])) {
             // Use a separate PHP script to display the image
-            echo "<img src='dashboard.php?id=" . $petId . "&image=true' alt='Pet Image' style='max-width: 300px; height: auto;'>";
+            echo "<img src='" . $pet['pet_picture'] . "' alt='Pet Image' style='max-width: 300px; height: auto;'>";
         } else {
             echo "No image available.";
         }
