@@ -67,7 +67,7 @@ $result = $stmt->get_result();
 
         echo "<p>Color: " . htmlspecialchars($pet['pet_color']) . "</p>";
         echo "<p>Neutered: " . htmlspecialchars($pet['neutered']) . "</p>";
-        echo "<p>History: " . $pet['pet_history'] . "</p>";
+        echo "<p>History: " . htmlspecialchars($pet['pet_history'] . "</p>";
 
         // Display image if available
         if (!empty($pet['pet_picture'])) {
